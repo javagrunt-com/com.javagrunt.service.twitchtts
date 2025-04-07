@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import java.io.InputStream;
 
 @SpringBootApplication
 public class Application {
@@ -32,7 +31,6 @@ class TwitchClientComponent {
 
 	public TwitchClientComponent() {
 		this.twitchClient = TwitchClientBuilder.builder()
-//				.withEnableHelix(true)
 				.withEnableChat(true)
 				.build();
 	}
