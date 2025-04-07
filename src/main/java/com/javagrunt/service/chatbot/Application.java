@@ -17,10 +17,10 @@ import javax.sound.sampled.Clip;
 import java.io.InputStream;
 
 @SpringBootApplication
-public class ChatbotApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ChatbotApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
@@ -57,8 +57,7 @@ class TwitchClientComponent {
 
 	private void speak(String text) {
 		try {
-			InputStream audio = marytts.generateAudio(text);
-			AudioInputStream audioStream = AudioSystem.getAudioInputStream(audio);
+			AudioInputStream audioStream = marytts.generateAudio(text); // Already good to go
 			Clip clip = AudioSystem.getClip();
 			clip.open(audioStream);
 			clip.start();
